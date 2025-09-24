@@ -3,281 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VedicDristi - Farmer Record System</title>
+    <title>Herb Authentication System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
+        body { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            min-height: 100vh; 
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        
-        .container {
-            background: white;
-            padding: 2rem;
+        .card { 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
+            border: none; 
             border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
         }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 2rem;
+        .btn-lg { 
+            font-size: 1.5rem; 
+            padding: 1rem 2rem; 
+            border-radius: 10px;
         }
-        
-        .header h1 {
-            color: #333;
-            margin-bottom: 0.5rem;
+        .feature-card { 
+            transition: all 0.3s ease; 
         }
-        
-        .header p {
-            color: #666;
-            font-size: 1.1rem;
+        .feature-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #333;
-            font-weight: 500;
-        }
-        
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e1e1e1;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        .result {
-            margin-top: 2rem;
-            padding: 1rem;
-            border-radius: 8px;
-            display: none;
-        }
-        
-        .result.success {
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            color: #155724;
-        }
-        
-        .result.error {
-            background: #f8d7da;
-            border: 1px solid #f5c6cb;
-            color: #721c24;
-        }
-        
-        .qr-code {
-            text-align: center;
-            margin-top: 1rem;
-        }
-        
-        .qr-code img {
-            max-width: 200px;
-            height: auto;
-        }
-        
-        .blockchain-info {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .view-blockchain {
-            margin-top: 1rem;
-            text-align: center;
-        }
-        
-        .view-blockchain a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .view-blockchain a:hover {
-            text-decoration: underline;
+        .hero-title {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🌾 VedicDristi</h1>
-            <p>Blockchain-Based Farmer Record System</p>
-        </div>
-        
-        <form id="farmerForm">
-            <div class="form-group">
-                <label for="farmer_name">Farmer Name:</label>
-                <input type="text" id="farmer_name" name="farmer_name" required>
+    <div class="container-fluid py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="text-center text-white mb-5">
+                    <h1 class="display-3 fw-bold hero-title mb-3">
+                        <i class="fas fa-seedling text-warning"></i> 
+                        भारतीय जड़ी-बूटी प्रामाणिकता प्रणाली
+                    </h1>
+                    <h2 class="h4 mb-3">Indian Herb Authentication System</h2>
+                    <p class="lead">Blockchain-powered authenticity verification for Indian farmers</p>
+                    <p><i class="fas fa-shield-alt"></i> Secure • <i class="fas fa-leaf"></i> Authentic • <i class="fas fa-link"></i> Transparent</p>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100 feature-card">
+                            <div class="card-body text-center p-5">
+                                <div class="mb-4">
+                                    <i class="fas fa-robot fa-4x text-primary"></i>
+                                </div>
+                                <h3 class="card-title h2 mb-3">किसान चैटबॉट</h3>
+                                <h5 class="text-muted mb-3">Farmer Chatbot</h5>
+                                <p class="card-text mb-4">
+                                    आसान आवाज़ और टेक्स्ट इनपुट के साथ अपनी जड़ी-बूटी रजिस्टर करें<br>
+                                    <em>Easy voice and text input for registering your herbs</em>
+                                </p>
+                                <a href="/chatbot" class="btn btn-primary btn-lg shadow">
+                                    <i class="fas fa-comments me-2"></i> शुरू करें / Start Chat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100 feature-card">
+                            <div class="card-body text-center p-5">
+                                <div class="mb-4">
+                                    <i class="fas fa-qrcode fa-4x text-success"></i>
+                                </div>
+                                <h3 class="card-title h2 mb-3">QR सत्यापन</h3>
+                                <h5 class="text-muted mb-3">QR Verification</h5>
+                                <p class="card-text mb-4">
+                                    जड़ी-बूटी की प्रामाणिकता सत्यापित करने के लिए QR कोड स्कैन करें<br>
+                                    <em>Scan QR code to verify herb authenticity</em>
+                                </p>
+                                <button class="btn btn-success btn-lg shadow" onclick="startQRScan()">
+                                    <i class="fas fa-camera me-2"></i> स्कैन करें / Scan QR
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h4 class="mb-0"><i class="fas fa-link me-2"></i> Blockchain Network Status</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="blockchain-status" class="text-center py-3">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2">Loading blockchain status...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label for="crop_type">Crop Type:</label>
-                <select id="crop_type" name="crop_type" required>
-                    <option value="">Select Crop</option>
-                    <option value="rice">Rice</option>
-                    <option value="wheat">Wheat</option>
-                    <option value="corn">Corn</option>
-                    <option value="tomato">Tomato</option>
-                    <option value="potato">Potato</option>
-                    <option value="onion">Onion</option>
-                    <option value="cotton">Cotton</option>
-                    <option value="sugarcane">Sugarcane</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="quantity">Quantity (kg):</label>
-                <input type="number" id="quantity" name="quantity" min="1" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="location">Farm Location:</label>
-                <input type="text" id="location" name="location" placeholder="City, State" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="harvest_date">Harvest Date:</label>
-                <input type="date" id="harvest_date" name="harvest_date" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="quality_grade">Quality Grade:</label>
-                <select id="quality_grade" name="quality_grade" required>
-                    <option value="">Select Grade</option>
-                    <option value="A+">A+ (Premium)</option>
-                    <option value="A">A (High Quality)</option>
-                    <option value="B+">B+ (Good)</option>
-                    <option value="B">B (Standard)</option>
-                    <option value="C">C (Basic)</option>
-                </select>
-            </div>
-            
-            <button type="submit" class="submit-btn">Create Blockchain Record</button>
-        </form>
-        
-        <div id="result" class="result">
-            <div id="resultMessage"></div>
-            <div class="qr-code" id="qrCode" style="display: none;"></div>
-            <div class="blockchain-info" id="blockchainInfo" style="display: none;"></div>
-        </div>
-        
-        <div class="view-blockchain">
-            <a href="/blockchain" target="_blank">📊 View Full Blockchain</a>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.getElementById('farmerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const submitBtn = document.querySelector('.submit-btn');
-            const result = document.getElementById('result');
-            
-            // Disable submit button and show loading
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Creating Record...';
-            result.style.display = 'none';
-            
-            fetch('/submit_record', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                result.style.display = 'block';
-                
-                if (data.success) {
-                    result.className = 'result success';
-                    document.getElementById('resultMessage').innerHTML = `
-                        <strong>✅ Success!</strong><br>
-                        ${data.message}
+        // Load blockchain status
+        function loadBlockchainStatus() {
+            fetch('/api/blockchain_status')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('blockchain-status').innerHTML = `
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <div class="p-3">
+                                    <h3 class="text-primary mb-1">${data.total_blocks}</h3>
+                                    <p class="text-muted mb-0">Total Blocks</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3">
+                                    <h3 class="${data.is_valid ? 'text-success' : 'text-danger'} mb-1">
+                                        ${data.is_valid ? 'Valid ✓' : 'Invalid ✗'}
+                                    </h3>
+                                    <p class="text-muted mb-0">Chain Status</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="p-3">
+                                    <h3 class="text-info mb-1">${data.latest_hash.substring(0,8)}...</h3>
+                                    <p class="text-muted mb-0">Latest Hash</p>
+                                </div>
+                            </div>
+                        </div>
                     `;
-                    
-                    // Show QR code
-                    if (data.qr_code) {
-                        const qrCode = document.getElementById('qrCode');
-                        qrCode.innerHTML = `
-                            <h3>📱 Scan QR Code for Verification</h3>
-                            <img src="data:image/png;base64,${data.qr_code}" alt="QR Code">
-                        `;
-                        qrCode.style.display = 'block';
-                    }
-                    
-                    // Show blockchain info
-                    const blockchainInfo = document.getElementById('blockchainInfo');
-                    blockchainInfo.innerHTML = `
-                        <strong>🔗 Block Hash:</strong><br>
-                        <code style="word-break: break-all;">${data.block_hash}</code>
-                    `;
-                    blockchainInfo.style.display = 'block';
-                    
-                    // Reset form
-                    this.reset();
-                } else {
-                    result.className = 'result error';
-                    document.getElementById('resultMessage').innerHTML = `
-                        <strong>❌ Error!</strong><br>
-                        ${data.error}
-                    `;
-                }
-            })
-            .catch(error => {
-                result.style.display = 'block';
-                result.className = 'result error';
-                document.getElementById('resultMessage').innerHTML = `
-                    <strong>❌ Error!</strong><br>
-                    Failed to create record. Please try again.
-                `;
-                console.error('Error:', error);
-            })
-            .finally(() => {
-                // Re-enable submit button
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Create Blockchain Record';
-            });
-        });
+                })
+                .catch(error => {
+                    document.getElementById('blockchain-status').innerHTML = 
+                        '<div class="alert alert-warning">Failed to load blockchain status. Please refresh the page.</div>';
+                });
+        }
+
+        function startQRScan() {
+            // Simple demo version - in real implementation, this would open camera
+            const hash = prompt('Enter block hash to verify (or scan QR code):');
+            if (hash) {
+                window.open(`/api/verify/${hash}`, '_blank');
+            }
+        }
+
+        // Load status on page load
+        document.addEventListener('DOMContentLoaded', loadBlockchainStatus);
+
+        // Refresh status every 30 seconds
+        setInterval(loadBlockchainStatus, 30000);
     </script>
 </body>
 </html>

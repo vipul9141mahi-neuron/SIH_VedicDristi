@@ -1,6 +1,8 @@
+run = "python main.py"
 modules = ["python-3.11"]
-[agent]
-expertMode = true
 
 [nix]
-channel = "stable-25_05"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
